@@ -141,7 +141,7 @@ class VirtualMachineInstance(NamespacedResource):
         Raises:
             TimeoutExpiredError: If resource not exists.
         """
-        self.logger.info(f"Wait until {self.kind} {self.name} is {'Paused' if pause else 'Unpuased'}")
+        self.logger.info(f"Wait until {self.kind} {self.name} is {'Paused' if pause else 'Unpaused'}")
         self.wait_for_domstate_pause_status(pause=pause, timeout=timeout)
         self.wait_for_vmi_condition_pause_status(pause=pause, timeout=timeout)
 
